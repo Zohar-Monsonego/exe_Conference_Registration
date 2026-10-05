@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conference Registration</title>
+  </head>
+  <body>
+    <main>
+      <h1>Conference Registration</h1>
+
+      <form action="/submit" method="post">
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label for="full_name">Full Name:</label>
+          <input
+            type="text"
+            id="full_name"
+            name="full_name"
+            minlength="2"
+            required
+          />
+
+          <br />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <br />
+          <label for="phone">Phone Number:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="05[0-9][0-9]{7}"
+            required
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Ticket & Workshops</legend>
+
+          <label for="ticket_type">Choose Ticket Type:</label>
+          <select name="ticket_type" id="ticket_type" required>
+            <option value="standard">Standard</option>
+            <option value="vip">VIP</option>
+            <option value="student">Student</option>
+          </select>
+
+          <br />
+
+          <p>Choose Workshop:</p>
+          <input
+            type="checkbox"
+            id="Web_Performance"
+            name="workshops"
+            value="web_performance"
+          />
+          <label for="Web_Performance">Web Performance</label>
+
+          <input
+            type="checkbox"
+            id="Accessibility"
+            name="workshops"
+            value="accessibility"
+          />
+          <label for="Accessibility">Accessibility</label>
+
+          <input
+            type="checkbox"
+            id="Testing"
+            name="workshops"
+            value="testing"
+          />
+          <label for="Testing">Testing</label>
+          <br />
+
+          <p>Diet:</p>
+          <input type="radio" id="None" name="diet" value="none" />
+          <label for="None">None</label>
+
+          <input type="radio" id="Vegan" name="diet" value="vegan" />
+          <label for="Vegan">Vegan</label>
+
+          <input type="radio" id="Kosher" name="diet" value="kosher" />
+          <label for="Kosher">Kosher</label>
+
+          <input type="radio" id="Halal" name="diet" value="halal" />
+          <label for="Halal">Halal</label>
+
+          <input type="radio" id="Other" name="diet" name="other" />
+          <lable for="Other">Other</lable>
+        </fieldset>
+
+        <fieldset>
+          <legend>Payment Details</legend>
+
+          <label for="card_nuber" name="card_number">Card Number:</label>
+          <input
+            type="text"
+            id="card_number"
+            name="card_number"
+            pattern="[0-9 ]{13,19}"
+          />
+
+          <br />
+          <label for="expire_date" name="expire_sate">Expiration Date:</label>
+          <input
+            type="month"
+            id="expire_date"
+            name="expire_date"
+            min="2026-10"
+          />
+
+          <br />
+          <label for="cvv" name="cvv">CVV:</label>
+          <input type="password" id="cvv" name="cvv" pattern="[0-9]{3,4}" />
+        </fieldset>
+
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+</html>
